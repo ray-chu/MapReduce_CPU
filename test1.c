@@ -56,7 +56,7 @@ void map_input_split(MapReduceSpec* spec){
 //			printf("%u, %u\n",st.st_size,buffer_used);		
 			if (pFile==NULL) {fputs ("File error\n",stderr); exit (1);}
 			size_t result;
-			result = fread (&buffer[buffer_used],1,st.st_size,pFile);
+			result = fread (buffer+buffer_used,1,st.st_size,pFile);
 			buffer_used=buffer_used+st.st_size;
 			if (result != st.st_size) {fputs ("Reading error\n",stderr); exit (3);}
 		}
